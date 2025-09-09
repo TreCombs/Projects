@@ -1,0 +1,5 @@
+type,domain_count,percentage_of_total
+benign,752,68.80
+defacement,247,22.60
+phishing,69,6.31
+malware,25,2.29
