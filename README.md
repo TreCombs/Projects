@@ -34,6 +34,8 @@ Spark ingests and prepares data for processing.
 
 Extract domains and TLDs.
 
+Remove Null values(2 were found in dataset)
+
 WHOIS lookups for domain ownership.
 
 Features include letter counts and A/T presence.
