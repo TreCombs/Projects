@@ -35,7 +35,7 @@ Assign severity ranks:
 
 🟡 Medium → Phishing
 
-🟢 Low → Benign
+🟢 Low → Benign                                                                                                    
 
 Prioritize critical URLs for analysis.
 
@@ -65,22 +65,4 @@ Ingestion	Databricks, Python, Pandas
 Transformation	PySpark, UDFs, tldextract, whois
 Analytics	Databricks SQL, Delta Lake
 Storage & Security	Azure Storage, Unity Catalog, Databricks Connector
-📊 System Architecture (Conceptual)
-[ Raw CSV in Azure Storage ]
-           |
-           |  (Secure Access via Secret Scope)
-           v
-[ Databricks Notebook / Spark Cluster ]
-           |
-           |  (Transform, Enrich, Feature Engineering)
-           v
-[ Temporary Views / UDF Transformations ]
-           |
-           |  (SQL Analytics & Aggregations)
-           v
-[ Delta Tables in Azure Storage ]
-           |
-           |  (Governed Access via Unity Catalog)
-           v
-[ Analysts / Data Scientists / Dashboards ]
 
