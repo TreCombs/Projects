@@ -1,5 +1,18 @@
 
 <img width="1536" height="1024" alt="Malicious URL System" src="https://github.com/user-attachments/assets/1052e0d4-9d20-4ba0-86f4-ab789c2bc71e" />
+Project Folder Structure
+
+.databricks/
+Contains Databricks-specific metadata that allows the platform to display notebook outputs properly. This folder is automatically managed by Databricks.
+
+final_table_csv/
+Stores the finalized tables exported from Databricks in CSV format. These are the cleaned and processed datasets ready for downstream use.
+
+notebooks/
+Contains Databricks notebooks along with their outputs. Notebooks include all code, visualizations, and intermediate results used during analysis or data transformations.
+
+sql_queries/
+Holds SQL query files and the resulting CSV outputs. Useful for reference, auditing, or re-running queries outside of Databricks.
 
 🚨 Malicious URL Enrichment and Analysis
 🌟 Overview
