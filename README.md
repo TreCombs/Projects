@@ -32,6 +32,8 @@ Aggregate distinct domains by type.
 
 Assign severity ranks:
 
+<img width="1208" height="460" alt="image" src="https://github.com/user-attachments/assets/f512a337-f447-4839-9d97-7042f4d6fb02" />
+
 🔴 High → Malware
 
 🟠 Medium High → Defacement
@@ -41,7 +43,7 @@ Assign severity ranks:
 🟢 Low → Benign                                                                                                    
 
 Prioritize critical URLs for analysis.
-
+<img width="522" height="227" alt="image" src="https://github.com/user-attachments/assets/5c273ffe-397d-4aa1-9b1b-6ac8e31f9e25" />
 4️⃣ Secure Storage & Governance
 
 Enriched datasets stored in Delta tables in Azure Storage.
@@ -61,6 +63,8 @@ Unity Catalog Permissions
 ✅ Secure & auditable access to sensitive data
 
 ✅ Governed dataset ready for analytics or ML
+<img width="1775" height="553" alt="image" src="https://github.com/user-attachments/assets/880606fc-036c-4a09-bdd6-190ea8be6512" />
+
 
 💻 Technologies Used
 Layer	Technology
