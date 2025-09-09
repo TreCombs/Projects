@@ -42,8 +42,9 @@ Assign severity ranks:
 
 🟢 Low → Benign                                                                                                    
 
-Prioritize critical URLs for analysis.
+Prioritize critical URLs for analysis:
 <img width="522" height="227" alt="image" src="https://github.com/user-attachments/assets/5c273ffe-397d-4aa1-9b1b-6ac8e31f9e25" />
+
 4️⃣ Secure Storage & Governance
 
 Enriched datasets stored in Delta tables in Azure Storage.
