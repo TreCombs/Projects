@@ -1,76 +1,86 @@
-System Design: Malicious URL Enrichment and Analysis
-1. Data Ingestion Layer
+🚨 Malicious URL Enrichment and Analysis
+🌟 Overview
 
-Source: Raw CSV files containing URLs, uploaded to Azure Storage (e.g., ADLS Gen2 or Blob Storage).
+This project ingests raw URL datasets from Azure Storage, enriches them with domain-level features, performs analytics, and stores the results in a secure Delta table.
+It provides a scalable, auditable pipeline for cybersecurity analysis.
 
-Security: Access to storage is managed via Databricks secret scopes; SAS tokens or service principals ensure no secrets are exposed in code.
+🛠 Workflow
+1️⃣ Secure Data Ingestion
 
-Tools: Databricks notebooks, Pandas for initial read (for small files), Spark for scalable ingestion.
+Raw CSVs landed in Azure Storage.
 
-2. Data Processing & Transformation Layer
+Credentials are managed via Databricks Secret Scopes.
 
-Compute: Databricks clusters (PySpark) process raw data.
+Spark ingests and prepares data for processing.
 
-Transformations:
+2️⃣ Domain Enrichment & Feature Engineering
 
-Extract domain and top-level domain (TLD) from URLs.
+Extract domains and TLDs.
 
-Enrich domains with WHOIS information (domain owner/organization).
+WHOIS lookups for domain ownership.
 
-Generate derived features (e.g., character counts, presence of specific letters).
+Features include letter counts and A/T presence.
 
-Scalability: Spark UDFs allow distributed processing across large datasets.
+Scalable using PySpark UDFs.
 
-Intermediate Storage: Temporary views in Spark for staging transformations.
+3️⃣ Analytics & Ranking
 
-3. Data Analytics Layer
+Aggregate distinct domains by type.
 
-SQL Aggregations:
+Assign severity ranks:
 
-Count distinct domains per type.
+🔴 High → Malware
 
-Compute percentages of total domains by type.
+🟠 Medium High → Defacement
 
-Assign severity rankings to URLs (High, Medium High, Medium, Low).
+🟡 Medium → Phishing
 
-Tools: Databricks SQL for queries and dashboards.
+🟢 Low → Benign
 
-Outputs: Top domains by severity and type distributions for analysis.
+Prioritize critical URLs for analysis.
 
-4. Data Storage Layer
+4️⃣ Secure Storage & Governance
 
-Destination: Enriched dataset stored in Delta tables in Azure Storage.
+Enriched datasets stored in Delta tables in Azure Storage.
 
-Features:
+Security enforced via:
 
-ACID transactions and versioning for traceability.
+Databricks Secret Scopes
 
-Scalable storage for large datasets.
+External Locations & Databricks Connector
 
-5. Security & Governance
+Unity Catalog Permissions
 
-Credential Management: All secrets stored in Databricks Secret Scope, not in notebooks.
+🔑 Key Benefits
 
-Access Control:
+✅ Scalable distributed pipeline for enrichment
 
-Unity Catalog governs access to tables and external locations.
+✅ Secure & auditable access to sensitive data
 
-External locations ensure controlled access between Databricks and Azure Storage.
+✅ Governed dataset ready for analytics or ML
 
-Databricks Connector manages secure connectivity to cloud storage.
+💻 Technologies Used
+Layer	Technology
+Ingestion	Databricks, Python, Pandas
+Transformation	PySpark, UDFs, tldextract, whois
+Analytics	Databricks SQL, Delta Lake
+Storage & Security	Azure Storage, Unity Catalog, Databricks Connector
+📊 System Architecture (Conceptual)
+[ Raw CSV in Azure Storage ]
+           |
+           |  (Secure Access via Secret Scope)
+           v
+[ Databricks Notebook / Spark Cluster ]
+           |
+           |  (Transform, Enrich, Feature Engineering)
+           v
+[ Temporary Views / UDF Transformations ]
+           |
+           |  (SQL Analytics & Aggregations)
+           v
+[ Delta Tables in Azure Storage ]
+           |
+           |  (Governed Access via Unity Catalog)
+           v
+[ Analysts / Data Scientists / Dashboards ]
 
-Compliance: Auditable logs for data access and modifications.
-
-6. Data Consumption Layer
-
-Consumers: Analysts, data scientists, and security teams.
-
-Use Cases:
-
-Identifying malicious domains.
-
-Building predictive models for phishing/malware detection.
-
-Reporting and visualization.
-
-Interface: SQL queries, dashboards, or exported datasets.
