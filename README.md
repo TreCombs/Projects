@@ -25,6 +25,7 @@ WHOIS lookups for domain ownership.
 Features include letter counts and A/T presence.
 
 Scalable using PySpark UDFs.
+<img width="1775" height="553" alt="image" src="https://github.com/user-attachments/assets/880606fc-036c-4a09-bdd6-190ea8be6512" />
 
 3️⃣ Analytics & Ranking
 
@@ -64,8 +65,6 @@ Unity Catalog Permissions
 ✅ Secure & auditable access to sensitive data
 
 ✅ Governed dataset ready for analytics or ML
-<img width="1775" height="553" alt="image" src="https://github.com/user-attachments/assets/880606fc-036c-4a09-bdd6-190ea8be6512" />
-
 
 💻 Technologies Used
 Layer	Technology
