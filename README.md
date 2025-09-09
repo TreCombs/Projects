@@ -1,3 +1,6 @@
+
+<img width="1536" height="1024" alt="Malicious URL System" src="https://github.com/user-attachments/assets/1052e0d4-9d20-4ba0-86f4-ab789c2bc71e" />
+
 🚨 Malicious URL Enrichment and Analysis
 🌟 Overview
 
